@@ -3,7 +3,7 @@ import solc from "solc";
 
 async function main() {
   // Load the contract source code
-  const sourceCode = await fs.readFile("./zok/verifier.sol", "utf8");
+  const sourceCode = await fs.readFile("./verifier.sol", "utf8");
   // Compile the source code and retrieve the ABI and Bytecode
   const { abi, bytecode } = compile(sourceCode, "Verifier");
   // Store the ABI and Bytecode into a JSON file

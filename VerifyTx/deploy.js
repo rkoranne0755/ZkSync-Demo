@@ -1,8 +1,10 @@
+import dotenv from "dotenv";
+dotenv.config({path:"../.env"});
+
 import Web3 from "web3";
+import fs from "fs";
 
 // Loading the contract ABI and Bytecode
-// (the results of a previous compilation step)
-import fs from "fs";
 const { abi, bytecode } = JSON.parse(fs.readFileSync("Verifier.json"));
 
 async function main() {
@@ -13,6 +15,7 @@ async function main() {
       `https://${network}.infura.io/v3/${process.env.INFURA_API_KEY}`,
     ),
   );
+  
   // Creating a signing account from a private key
   const signer = web3.eth.accounts.privateKeyToAccount(
     '0x' + process.env.SIGNER_PRIVATE_KEY,
@@ -39,6 +42,4 @@ async function main() {
   );
 }
 
-import dotenv from "dotenv";
-dotenv.config();
 main();

@@ -1,6 +1,7 @@
 import dotenv from "dotenv";
 import Web3 from "web3";
 
+dotenv.config({path:"../.env"});
 // Loading the contract ABI
 // (the results of a previous compilation step)
 import fs from "fs";
@@ -69,5 +70,4 @@ async function main() {
 console.log("Transaction Verified:", result);
 }
 
-dotenv.config();
 main();
