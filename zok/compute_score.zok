@@ -1,0 +1,7 @@
+def main(private field a,private field b, field c) -> bool {
+    assert(a >= 1);
+    assert(b >= 1);
+
+    bool ans = if a*a * b*b >= c*c {true} else {false};
+    return ans;
+}
