@@ -2,7 +2,7 @@ import Web3 from "web3";
 import fs from "fs";
 import dotenv from "dotenv";
 
-dotenv.config();
+dotenv.config({path:"../.env"});
 
 // Loading the ScoreManager contract ABI and Bytecode
 const { abi, bytecode } = JSON.parse(fs.readFileSync("ScoreManager.json"));

@@ -2,6 +2,8 @@ import dotenv from "dotenv";
 import Web3 from "web3";
 import fs from "fs";
 
+dotenv.config({path:"../.env"});
+
 // Loading the ScoreManager contract ABI
 const { abi: scoreManagerAbi } = JSON.parse(fs.readFileSync("ScoreManager.json"));
 // const { abi: verifierAbi } = JSON.parse(fs.readFileSync("Verifier.json"));
@@ -90,5 +92,4 @@ async function main() {
   });
 }
 
-dotenv.config();
 main().catch(console.error);
